@@ -44,8 +44,7 @@ Routes
     Functions.post()
   )
   .patch(
-    '/',
-    autoInject,
+    '/:id',
     accept({ instance: 'body', fields: [ 'name', 'email' ] }),
     Functions.patch()
   )

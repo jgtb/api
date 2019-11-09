@@ -16,35 +16,37 @@ export default async (req, _, next) => {
     originalUrl
   } = req
 
-  const module = getModule(originalUrl)
-  const apiVersion = getApiVersion(originalUrl)
-  const endpoint = getEndpoint(originalUrl, module)
+  console.log(originalUrl)
 
-  console.log({
-    method,
-    module,
-    endpoint
-  })
+  // const module = getModule(originalUrl)
+  // const apiVersion = getApiVersion(originalUrl)
+  // const endpoint = getEndpoint(originalUrl, module)
 
-  const payload = {
-    actor: user.id,
-    url: originalUrl,
-    module,
-    endpoint,
-    method,
-    req: {
-      params,
-      query,
-      body,
-      paginate,
-      sort
-    },
-    apiVersion
-  }
+  // console.log({
+  //   method,
+  //   module,
+  //   endpoint
+  // })
 
-  const model = await Schema(payload).save()
+  // const payload = {
+  //   actor: user.id,
+  //   url: originalUrl,
+  //   module,
+  //   endpoint,
+  //   method,
+  //   req: {
+  //     params,
+  //     query,
+  //     body,
+  //     paginate,
+  //     sort
+  //   },
+  //   apiVersion
+  // }
 
-  req.logger = model._id
+  // const model = await Schema(payload).save()
+
+  // req.logger = model._id
 
   next()
 }

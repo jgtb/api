@@ -7,6 +7,7 @@ export default async (Faker) => {
 
   await asyncForEach(Array.from({ length: 150 }), async () => {
     data.push({
+      role: 'user',
       name: Faker.name.findName(),
       email: Faker.internet.email().toLowerCase(),
       password: '123456',

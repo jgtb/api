@@ -2,6 +2,11 @@ import { emailValidator } from '../../../support/validations'
 import { REQUIRED, INVALID } from '../../../support/validations/messages'
 
 export default {
+  role: {
+    type: String,
+    enum: [ 'master', 'user' ],
+    default: 'user'
+  },
   name: {
     type: String,
     unique: true,
