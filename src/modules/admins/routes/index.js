@@ -1,7 +1,6 @@
 import { Router } from 'express'
 
 import Functions from '../support/functions'
-import { reset } from '../middleware'
 import { baseMatch } from '../pipeline'
 
 const Routes = Router()
@@ -21,11 +20,6 @@ Routes
     '/details/:id',
     baseMatch,
     Functions.getById()
-  )
-  .patch(
-    '/reset/:id',
-    reset,
-    Functions.patch()
   )
 
 export default Routes

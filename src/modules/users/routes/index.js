@@ -72,6 +72,10 @@ Routes
     updatePassword,
     Functions.patch()
   )
+  .patch(
+    '/activateDeactivate/:id',
+    Functions.activateDeactivate()
+  )
   .delete(
     '/:id',
     Functions.softDelete()
