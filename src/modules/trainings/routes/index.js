@@ -1,6 +1,7 @@
 import { Router } from 'express'
 
 import Functions from '../support/functions'
+import { sadasd } from '../pipeline'
 import { accept } from '../../../middleware'
 
 const Routes = Router()
@@ -8,6 +9,8 @@ const Routes = Router()
 Routes
   .get(
     '/',
+    ACL('master', 'asdasd', 'aasdsadsadasd'),
+    sadasd,
     Functions.get()
   )
   .get(
