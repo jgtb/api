@@ -1,7 +1,6 @@
 import { Router } from 'express'
 
 import Functions from '../support/functions'
-import { schedulesDates, scheduleDate } from '../middleware'
 import { accept } from '../../../middleware'
 
 const Routes = Router()
@@ -21,27 +20,13 @@ Routes
   )
   .post(
     '/',
-    schedulesDates,
-    accept({ instance: 'body', fields: [ 'name', 'schedules' ] }),
+    accept({ instance: 'body', fields: [ 'name', 'type', 'description' ] }),
     Functions.post()
-  )
-  .post(
-    '/schedules/:id',
-    scheduleDate,
-    accept({ instance: 'body', fields: [ 'type', 'dayOfWeek', 'initial', 'end' ] }),
-    Functions.postArray('schedules')
   )
   .patch(
     '/:id',
-    schedulesDates,
-    accept({ instance: 'body', fields: [ 'name', 'schedules' ] }),
+    accept({ instance: 'body', fields: [ 'name', 'type', 'description' ] }),
     Functions.patch()
-  )
-  .patch(
-    '/schedules/:id',
-    scheduleDate,
-    accept({ instance: 'body', fields: [ '_id', 'type', 'dayOfWeek', 'initial', 'end' ] }),
-    Functions.patchArray('schedules')
   )
   .patch(
     '/activateDeactivate/:id',

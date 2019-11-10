@@ -20,12 +20,12 @@ Routes
   )
   .post(
     '/',
-    accept({ instance: 'body', fields: [ 'lesson', 'presences', 'date' ] }),
+    accept({ instance: 'body', fields: [ 'user', 'value', 'status' ] }),
     Functions.post()
   )
   .patch(
     '/:id',
-    accept({ instance: 'body', fields: [ 'lesson', 'presences', 'date' ] }),
+    accept({ instance: 'body', fields: [ 'user', 'value', 'status' ] }),
     Functions.patch()
   )
   .delete(
